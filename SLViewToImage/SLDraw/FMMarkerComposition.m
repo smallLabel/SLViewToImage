@@ -10,9 +10,8 @@
 #import "FMMarkerImage.h"
 #import "FMMarkerText.h"
 #import "FMMarkerContentFlag.h"
-#import "FMMarkerText+FMTextTool.h"
-#import "FMMarkerImage+FMImageTool.h"
-#import "FMMarkerComposition+FMCompositionTool.h"
+#import "FMMarkerTool.h"
+#import "FMMarkerComposition+FMMarkerCompositionTool.h"
 
 @interface FMMarkerComposition()
 {
@@ -66,7 +65,8 @@
     {
         FMMarkerText *textMarker = (FMMarkerText *)flag.markerContent;
         //计算文字尺寸
-        size = [FMMarkerText fm_calTextSizeWithText:textMarker.text font:textMarker.font];
+        size = [FMMarkerTool fm_calTextSizeWithText:textMarker.text font:textMarker.font];
+        size = [FMMarkerTool fm_calTextFrameWithTextSize:size cornerRadius:textMarker.frameRatio];
     } else if ([flag.markerContent isKindOfClass:[FMMarkerComposition class]]) {
         FMMarkerComposition *markerComposition = (FMMarkerComposition *)flag.markerContent;
         size = markerComposition.size;
@@ -144,30 +144,13 @@
 - (FMMarkerContentType)type {
     return FMMARKERCONTENT_COMPOSITION;
 }
-//画图
-//- (void)fm_drawImage:(FMMarkerContentFlag *)flag {
-//    
-//}
-//根据不同类型content绘制不同图片
-+ (void)fm_drawImageByFlag:(FMMarkerContentFlag *)flag {
-    
-    if ([flag.markerContent isKindOfClass:[FMMarkerText class]]) {
-        FMMarkerText *textMarker = (FMMarkerText *)flag.markerContent;
-        flag.image = [FMMarkerText fm_convertTextToImageWithText:textMarker.text size:flag.rect.size fillColor:textMarker.fillColor strokeColor:textMarker.strokeColor font:textMarker.font width:textMarker.strokeWidth];
-    } else if ([flag.markerContent isKindOfClass:[FMMarkerImage class]]) {
-        FMMarkerImage *imageMarker = (FMMarkerImage *)flag.markerContent;
-        flag.image = [FMMarkerImage fm_redrawImage:imageMarker.image size:imageMarker.imageSize];
-    } else if ([flag.markerContent isKindOfClass:[FMMarkerComposition class]]) {
-        FMMarkerComposition *composition = (FMMarkerComposition *)flag.markerContent;
-        flag.image = composition.image;
-    }
-}
+
 //合并所有图片
 - (void)fm_mergerImages {
     //底图
-    _baseMap = [FMMarkerComposition fm_drawRectangleWithCornerRadius:self.frameRatio size:self.size backgroundColor:self.backgroundColor];
+    _baseMap = [FMMarkerTool fm_drawRectangleWithCornerRadius:self.frameRatio size:self.size backgroundColor:self.backgroundColor];
     for (FMMarkerContentFlag *flag in _flags) {
-        _baseMap = [self fm_mergeImage1:_baseMap rect1:CGRectMake(0, 0, self.size.width, self.size.height) image2:flag.image rect2:flag.rect];
+        _baseMap = [FMMarkerTool fm_mergeImage1:_baseMap rect1:CGRectMake(0, 0, self.size.width, self.size.height) image2:flag.image rect2:flag.rect];
     }
 }
 

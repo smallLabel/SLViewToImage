@@ -37,6 +37,13 @@
 //    [attStr addAttribute:NSVerticalGlyphFormAttributeName value:@1 range:NSMakeRange(0, str.length)];
 //    label.attributedText = attStr;
 //    NSLog(@"%@",attStr);
+    FMMarkerComposition *com = [[FMMarkerComposition alloc] init];
+    FMMarkerText *text1 = [[FMMarkerText alloc] init];
+    text1.text = @"吃午饭了吗？";
+    
+    FMMarkerImage *image1 = [[FMMarkerImage alloc] init];
+    image1.image = [UIImage imageNamed:@"test.jpg"];
+    image1.imageSize = CGSizeMake(40, 40);
     
     FMMarkerText *text = [[FMMarkerText alloc] init];
     text.text = @"今儿下雨了";
@@ -44,9 +51,11 @@
     text.strokeWidth = 1.0;
     text.strokeColor = [UIColor greenColor];
     text.font = [UIFont systemFontOfSize:16];
+    text.backgroundColor = [UIColor yellowColor];
+    text.frameRatio = 6.0;
     
     FMMarkerImage *imageMarker = [[FMMarkerImage alloc] init];
-    imageMarker.image = [UIImage imageNamed:@"fengmap"];
+    imageMarker.image = [UIImage imageNamed:@"test.jpg"];
 
     FMMarkerComposition *composition = [[FMMarkerComposition alloc] init];
 //    composition.backgroundColor = [UIColor yellowColor];
@@ -59,14 +68,16 @@
     composition1.frameRatio = 6.0;
     [composition1 addMarkerContent:imageMarker name:@"image" space:10];
     [composition1 addMarkerContent:text name:@"text" space:10];
+    [composition1 addMarkerContent:image1 name:@"432" space:10];
     
-    FMMarkerComposition *com = [[FMMarkerComposition alloc] init];
     com.layoutMode = FMMarkerCompositionLayoutMode_VERTICAL;
     com.frameRatio = 6.0;
+    [com addMarkerContent:text1 name:@"234" space:10];
+    [com addMarkerContent:image1 name:@"23" space:10];
     [com addMarkerContent:composition1 name:@"23" space:10];
     [com addMarkerContent:composition name:@"34" space:10];
     
-    UIImageView *imageView = [[UIImageView alloc] initWithFrame:CGRectMake(10, 40, com.size.width, com.size.height)];
+    UIImageView *imageView = [[UIImageView alloc] initWithFrame:CGRectMake(100, 200, com.size.width, com.size.height)];
     imageView.image = com.image;
     [self.view addSubview:imageView];
 }
@@ -112,7 +123,7 @@
     label.attributedText = mutableAttributedstring;
     label.numberOfLines = 0;
     SLImageElement *imageView = [[SLImageElement alloc] initWithFrame:CGRectMake(10, 120, 80, 80)];
-    imageView.image = [UIImage imageNamed:@"fengmap"];
+    imageView.image = [UIImage imageNamed:@"test.jpg"];
     [view addSubview:label];
     [view addSubview:imageView];
     return view;

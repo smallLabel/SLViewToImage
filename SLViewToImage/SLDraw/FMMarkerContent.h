@@ -18,7 +18,9 @@ typedef NS_ENUM(NSInteger, FMMarkerContentType) {
 @interface FMMarkerContent : NSObject
 
 @property (nonatomic, readonly) FMMarkerContentType type;
+//默认白色
 @property (nonatomic, strong) UIColor *backgroundColor;
+//默认6.0
 @property (nonatomic) CGFloat frameRatio;
 
 @end

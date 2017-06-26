@@ -9,6 +9,7 @@
 #import "FMMarkerContentManager.h"
 
 static FMMarkerContentManager *mManager = nil;
+
 @interface FMMarkerContentManager()
 
 @end

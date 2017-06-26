@@ -7,12 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		E92737051EFCB11000A2C156 /* FMMarkerImage+FMImageTool.m in Sources */ = {isa = PBXBuildFile; fileRef = E92737041EFCB11000A2C156 /* FMMarkerImage+FMImageTool.m */; };
 		E92737081EFCB5EB00A2C156 /* FMMarkerContentFlag.m in Sources */ = {isa = PBXBuildFile; fileRef = E92737071EFCB5EB00A2C156 /* FMMarkerContentFlag.m */; };
-		E927370B1EFCEDAF00A2C156 /* FMMarkerComposition+FMCompositionTool.m in Sources */ = {isa = PBXBuildFile; fileRef = E927370A1EFCEDAF00A2C156 /* FMMarkerComposition+FMCompositionTool.m */; };
 		E92737331F00A63A00A2C156 /* FMMarkerContentManager.m in Sources */ = {isa = PBXBuildFile; fileRef = E92737321F00A63A00A2C156 /* FMMarkerContentManager.m */; };
+		E92737351F00BD2E00A2C156 /* test.jpg in Resources */ = {isa = PBXBuildFile; fileRef = E92737341F00BD2E00A2C156 /* test.jpg */; };
+		E92737381F00C04900A2C156 /* FMMarkerTool.m in Sources */ = {isa = PBXBuildFile; fileRef = E92737371F00C04900A2C156 /* FMMarkerTool.m */; };
+		E927373B1F00E26900A2C156 /* FMMarkerComposition+FMMarkerCompositionTool.m in Sources */ = {isa = PBXBuildFile; fileRef = E927373A1F00E26900A2C156 /* FMMarkerComposition+FMMarkerCompositionTool.m */; };
 		E97600221EFBBF02008A0588 /* CoreText.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E97600211EFBBF02008A0588 /* CoreText.framework */; };
-		E97600251EFBCA40008A0588 /* FMMarkerText+FMTextTool.m in Sources */ = {isa = PBXBuildFile; fileRef = E97600241EFBCA40008A0588 /* FMMarkerText+FMTextTool.m */; };
 		E9762F5D1EFBA1C000AB7CE5 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E9762F5C1EFBA1C000AB7CE5 /* CoreGraphics.framework */; };
 		E9762F5F1EFBA1C600AB7CE5 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E9762F5E1EFBA1C600AB7CE5 /* QuartzCore.framework */; };
 		E9762F6A1EFBA2F800AB7CE5 /* SLCollectionMarker.m in Sources */ = {isa = PBXBuildFile; fileRef = E9762F621EFBA2F800AB7CE5 /* SLCollectionMarker.m */; };
@@ -34,17 +34,16 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		E92737031EFCB11000A2C156 /* FMMarkerImage+FMImageTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "FMMarkerImage+FMImageTool.h"; sourceTree = "<group>"; };
-		E92737041EFCB11000A2C156 /* FMMarkerImage+FMImageTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "FMMarkerImage+FMImageTool.m"; sourceTree = "<group>"; };
 		E92737061EFCB5EB00A2C156 /* FMMarkerContentFlag.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMMarkerContentFlag.h; sourceTree = "<group>"; };
 		E92737071EFCB5EB00A2C156 /* FMMarkerContentFlag.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMMarkerContentFlag.m; sourceTree = "<group>"; };
-		E92737091EFCEDAF00A2C156 /* FMMarkerComposition+FMCompositionTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "FMMarkerComposition+FMCompositionTool.h"; sourceTree = "<group>"; };
-		E927370A1EFCEDAF00A2C156 /* FMMarkerComposition+FMCompositionTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "FMMarkerComposition+FMCompositionTool.m"; sourceTree = "<group>"; };
 		E92737311F00A63A00A2C156 /* FMMarkerContentManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMMarkerContentManager.h; sourceTree = "<group>"; };
 		E92737321F00A63A00A2C156 /* FMMarkerContentManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMMarkerContentManager.m; sourceTree = "<group>"; };
+		E92737341F00BD2E00A2C156 /* test.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = test.jpg; sourceTree = "<group>"; };
+		E92737361F00C04900A2C156 /* FMMarkerTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMMarkerTool.h; sourceTree = "<group>"; };
+		E92737371F00C04900A2C156 /* FMMarkerTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMMarkerTool.m; sourceTree = "<group>"; };
+		E92737391F00E26900A2C156 /* FMMarkerComposition+FMMarkerCompositionTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "FMMarkerComposition+FMMarkerCompositionTool.h"; sourceTree = "<group>"; };
+		E927373A1F00E26900A2C156 /* FMMarkerComposition+FMMarkerCompositionTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "FMMarkerComposition+FMMarkerCompositionTool.m"; sourceTree = "<group>"; };
 		E97600211EFBBF02008A0588 /* CoreText.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreText.framework; path = System/Library/Frameworks/CoreText.framework; sourceTree = SDKROOT; };
-		E97600231EFBCA40008A0588 /* FMMarkerText+FMTextTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "FMMarkerText+FMTextTool.h"; sourceTree = "<group>"; };
-		E97600241EFBCA40008A0588 /* FMMarkerText+FMTextTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "FMMarkerText+FMTextTool.m"; sourceTree = "<group>"; };
 		E9762F5C1EFBA1C000AB7CE5 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		E9762F5E1EFBA1C600AB7CE5 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		E9762F611EFBA2F800AB7CE5 /* SLCollectionMarker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SLCollectionMarker.h; sourceTree = "<group>"; };
@@ -128,20 +127,18 @@
 				E9762F701EFBA35C00AB7CE5 /* FMMarkerContent.m */,
 				E9762F721EFBA37500AB7CE5 /* FMMarkerText.h */,
 				E9762F731EFBA37500AB7CE5 /* FMMarkerText.m */,
-				E97600231EFBCA40008A0588 /* FMMarkerText+FMTextTool.h */,
-				E97600241EFBCA40008A0588 /* FMMarkerText+FMTextTool.m */,
 				E9762F751EFBA39400AB7CE5 /* FMMarkerImage.h */,
 				E9762F761EFBA39400AB7CE5 /* FMMarkerImage.m */,
-				E92737031EFCB11000A2C156 /* FMMarkerImage+FMImageTool.h */,
-				E92737041EFCB11000A2C156 /* FMMarkerImage+FMImageTool.m */,
 				E9762F781EFBA3A900AB7CE5 /* FMMarkerComposition.h */,
 				E9762F791EFBA3A900AB7CE5 /* FMMarkerComposition.m */,
-				E92737091EFCEDAF00A2C156 /* FMMarkerComposition+FMCompositionTool.h */,
-				E927370A1EFCEDAF00A2C156 /* FMMarkerComposition+FMCompositionTool.m */,
+				E92737391F00E26900A2C156 /* FMMarkerComposition+FMMarkerCompositionTool.h */,
+				E927373A1F00E26900A2C156 /* FMMarkerComposition+FMMarkerCompositionTool.m */,
 				E92737061EFCB5EB00A2C156 /* FMMarkerContentFlag.h */,
 				E92737071EFCB5EB00A2C156 /* FMMarkerContentFlag.m */,
 				E92737311F00A63A00A2C156 /* FMMarkerContentManager.h */,
 				E92737321F00A63A00A2C156 /* FMMarkerContentManager.m */,
+				E92737361F00C04900A2C156 /* FMMarkerTool.h */,
+				E92737371F00C04900A2C156 /* FMMarkerTool.m */,
 			);
 			path = SLDraw;
 			sourceTree = "<group>";
@@ -172,6 +169,7 @@
 				E9B0F1561EF3717300CB49BC /* AppDelegate.m */,
 				E9B0F1581EF3717300CB49BC /* ViewController.h */,
 				E9B0F1591EF3717300CB49BC /* ViewController.m */,
+				E92737341F00BD2E00A2C156 /* test.jpg */,
 				E9B0F1721EF3851200CB49BC /* fengmap.png */,
 				E9B0F15B1EF3717300CB49BC /* Main.storyboard */,
 				E9B0F15E1EF3717300CB49BC /* Assets.xcassets */,
@@ -250,6 +248,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E9B0F1731EF3851200CB49BC /* fengmap.png in Resources */,
+				E92737351F00BD2E00A2C156 /* test.jpg in Resources */,
 				E9B0F1621EF3717300CB49BC /* LaunchScreen.storyboard in Resources */,
 				E9B0F15F1EF3717300CB49BC /* Assets.xcassets in Resources */,
 				E9B0F15D1EF3717300CB49BC /* Main.storyboard in Resources */,
@@ -266,15 +265,14 @@
 				E9B0F15A1EF3717300CB49BC /* ViewController.m in Sources */,
 				E92737081EFCB5EB00A2C156 /* FMMarkerContentFlag.m in Sources */,
 				E9762F7A1EFBA3A900AB7CE5 /* FMMarkerComposition.m in Sources */,
+				E927373B1F00E26900A2C156 /* FMMarkerComposition+FMMarkerCompositionTool.m in Sources */,
 				E9762F6A1EFBA2F800AB7CE5 /* SLCollectionMarker.m in Sources */,
 				E9B0F1711EF37FFD00CB49BC /* UIView+SLViewToImage.m in Sources */,
 				E9762F741EFBA37500AB7CE5 /* FMMarkerText.m in Sources */,
-				E92737051EFCB11000A2C156 /* FMMarkerImage+FMImageTool.m in Sources */,
 				E9B0F1571EF3717300CB49BC /* AppDelegate.m in Sources */,
-				E97600251EFBCA40008A0588 /* FMMarkerText+FMTextTool.m in Sources */,
+				E92737381F00C04900A2C156 /* FMMarkerTool.m in Sources */,
 				E9762F771EFBA39400AB7CE5 /* FMMarkerImage.m in Sources */,
 				E9762F6D1EFBA2F800AB7CE5 /* SLLabelElement.m in Sources */,
-				E927370B1EFCEDAF00A2C156 /* FMMarkerComposition+FMCompositionTool.m in Sources */,
 				E92737331F00A63A00A2C156 /* FMMarkerContentManager.m in Sources */,
 				E9762F6C1EFBA2F800AB7CE5 /* SLImageElement.m in Sources */,
 				E9B0F1541EF3717300CB49BC /* main.m in Sources */,

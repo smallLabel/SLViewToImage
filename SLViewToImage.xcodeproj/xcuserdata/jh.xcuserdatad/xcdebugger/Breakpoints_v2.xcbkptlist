@@ -20,11 +20,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "SLViewToImage/ViewController.m"
-            timestampString = "520011359.159105"
+            timestampString = "520151181.397654"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "66"
-            endingLineNumber = "66"
+            startingLineNumber = "77"
+            endingLineNumber = "77"
             landmarkName = "-viewDidLoad"
             landmarkType = "7">
          </BreakpointContent>
@@ -32,16 +32,16 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "SLViewToImage/SLDraw/FMMarkerComposition.m"
-            timestampString = "520011276.050437"
+            filePath = "SLViewToImage/SLDraw/FMMarkerTool.m"
+            timestampString = "520149889.590977"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "168"
-            endingLineNumber = "168"
-            landmarkName = "-fm_mergerImages"
+            startingLineNumber = "40"
+            endingLineNumber = "40"
+            landmarkName = "+fm_mergeImage1:rect1:image2:rect2:"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
