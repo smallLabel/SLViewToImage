@@ -13,7 +13,8 @@
 
 + (UIImage *)fm_drawRectangleWithCornerRadius:(CGFloat)cornerRadius
                                          size:(CGSize)size
-                              backgroundColor:(UIColor *)backgroundColor;
+                              backgroundColor:(UIColor *)backgroundColor
+                                  strokeColor:(UIColor *)strokeColor;
 
 + (UIImage *)fm_mergeImage1:(UIImage *)image1
                       rect1:(CGRect)rect1

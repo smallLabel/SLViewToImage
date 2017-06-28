@@ -16,8 +16,8 @@ typedef NS_ENUM(NSInteger, FMMarkerTextLayoutDirectionMode) {
 @interface FMMarkerText : FMMarkerContent
 @property (nonatomic) int strokeWidth;
 @property (nonatomic) FMMarkerTextLayoutDirectionMode layoutDirectionMode;
-@property (nonatomic, strong) UIFont *font;
-@property (nonatomic, copy) NSString *text;
-@property (nonatomic, strong) UIColor *fillColor;
-@property (nonatomic, strong) UIColor *strokeColor;
+@property (nonatomic, strong, nullable) UIFont *font;
+@property (nonatomic, copy, nonnull) NSString *text;
+@property (nonatomic, strong, nullable) UIColor *fillColor;
+@property (nonatomic, strong, nullable) UIColor *strokeColor;
 @end

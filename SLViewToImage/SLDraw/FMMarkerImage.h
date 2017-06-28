@@ -12,6 +12,6 @@
 @interface FMMarkerImage : FMMarkerContent
 
 @property (nonatomic, strong, nonnull) UIImage *image;
-@property (nonatomic) CGSize imageSize;
+@property (nonatomic, assign,readwrite) CGSize imageSize;
 
 @end

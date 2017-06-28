@@ -7,14 +7,19 @@
 //
 
 #import "FMMarkerContent.h"
+#import "FMMarkerContentManager.h"
+
+NSString * const FMMarkerContentUpdate = @"FMMarkerContentUpdate";
+NSString * const FMMarkerContentNeedRecalculateSize = @"FMMarkerContentNeedRecalculateSize";
 
 @implementation FMMarkerContent
 
 - (instancetype)init {
     self = [super init];
     if (self) {
-        _frameRatio = 6.0;
+        _frameRatio = 20.0;
         _backgroundColor = [UIColor whiteColor];
+        [FMMarkerContentManager shareManager];
     }
     return self;
 }

@@ -12,6 +12,6 @@
 
 @interface FMMarkerComposition (FMMarkerCompositionTool)
 
-+ (void)fm_drawImageByFlag:(FMMarkerContentFlag *)flag;
-
+- (void)fm_drawImageByFlag:(FMMarkerContentFlag *)flag;
+- (BOOL)fm_containMarkerContent:(FMMarkerContent *)markerContent flags:(NSArray *)flags;
 @end

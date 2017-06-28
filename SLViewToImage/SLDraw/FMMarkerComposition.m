@@ -12,6 +12,11 @@
 #import "FMMarkerContentFlag.h"
 #import "FMMarkerTool.h"
 #import "FMMarkerComposition+FMMarkerCompositionTool.h"
+#import "FMMarkerContent+FMMarkerContentTool.h"
+
+extern NSString *FMMarkerContentUpdate;
+extern NSString *FMMarkerContentNeedRecalculateSize;
+
 
 @interface FMMarkerComposition()
 {
@@ -22,6 +27,8 @@
 @end
 
 @implementation FMMarkerComposition
+@synthesize frameRatio = _frameRatio;
+@synthesize backgroundColor = _backgroundColor;
 
 - (instancetype)init {
     if (self = [super init]) {
@@ -29,8 +36,9 @@
         _compositionSize = CGSizeZero;
         _layoutMode = FMMarkerCompositionLayoutMode_HORIZONTAL;
         _margin = 5;
-        self.backgroundColor = [UIColor whiteColor];
-        
+        _frameRatio = 20;
+        _backgroundColor = [UIColor whiteColor];
+        [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(update:) name:FMMarkerContentUpdate object:nil];
     }
     return self;
 }
@@ -40,15 +48,17 @@
     if (space < 1) {
         space = 10;
     }
+    markerContent.parent = self;
     FMMarkerContentFlag *flag = [[FMMarkerContentFlag alloc] init];
     flag.markerContent = markerContent;
     flag.name = name;
     flag.space = space;
+    flag.haveJoined = YES;
     [_flags addObject:flag];
+    
     //计算尺寸
     [self fm_analyseMarkerContentWithFlag:flag];
-//    [self fm_drawImage:flag];
-    [FMMarkerComposition fm_drawImageByFlag:flag];
+    [self fm_drawImageByFlag:flag];
     [self fm_mergerImages];
 }
 
@@ -107,10 +117,11 @@
     if (_compositionSize.width - 2*_margin < flag.rect.size.width) {
         _compositionSize.width = flag.rect.size.width + 2*_margin;
     }
-    if (_flags.count == 1) {
+    NSInteger index = [_flags indexOfObject:flag];
+    if (index == 0) {
         _compositionSize.height = flag.rect.size.height + _compositionSize.height + 2*_margin;
     } else {
-        NSInteger index = [_flags indexOfObject:flag];
+       
         FMMarkerContentFlag *lastFlag = (FMMarkerContentFlag *)_flags[index-1];
         _compositionSize.height = flag.rect.size.height + _compositionSize.height + lastFlag.space;
     }
@@ -122,10 +133,10 @@
     if (_compositionSize.height - 2*_margin < flag.rect.size.height) {
         _compositionSize.height = flag.rect.size.height + 2*_margin;
     }
-    if (_flags.count == 1) {
+    NSInteger index = [_flags indexOfObject:flag];
+    if (index == 0) {
         _compositionSize.width = _compositionSize.width + flag.rect.size.width + 2*_margin;
     } else {
-        NSInteger index = [_flags indexOfObject:flag];
         FMMarkerContentFlag *lastFlag = _flags[index-1];
         _compositionSize.width = _compositionSize.width + flag.rect.size.width + lastFlag.space;
     }
@@ -148,7 +159,7 @@
 //合并所有图片
 - (void)fm_mergerImages {
     //底图
-    _baseMap = [FMMarkerTool fm_drawRectangleWithCornerRadius:self.frameRatio size:self.size backgroundColor:self.backgroundColor];
+    _baseMap = [FMMarkerTool fm_drawRectangleWithCornerRadius:self.frameRatio size:self.size backgroundColor:self.backgroundColor strokeColor:self.backgroundColor];
     for (FMMarkerContentFlag *flag in _flags) {
         _baseMap = [FMMarkerTool fm_mergeImage1:_baseMap rect1:CGRectMake(0, 0, self.size.width, self.size.height) image2:flag.image rect2:flag.rect];
     }
@@ -161,5 +172,53 @@
 - (UIImage *)image {
     return _baseMap;
 }
+
+- (void)setLayoutMode:(FMMarkerCompositionLayoutMode)layoutMode {
+    if (_layoutMode == layoutMode) {
+        return;
+    }
+    _layoutMode = layoutMode;
+    if (_baseMap) {
+        [self fm_updateContentWithNeedRecalculateSize:YES flags:_flags];
+    }
+    
+}
+
+- (void)setMargin:(CGFloat)margin {
+    if (_margin - margin<0.01) {
+        return;
+    }
+    _margin = margin;
+    if (_baseMap) {
+        [self fm_updateContentWithNeedRecalculateSize:YES flags:_flags];
+    }
+}
+
+- (void)setFrameRatio:(CGFloat)frameRatio {
+    if (self.frameRatio - frameRatio < 0.01) {
+        return;
+    }
+    _frameRatio = frameRatio;
+    if (_baseMap) {
+        [self fm_updateContentWithNeedRecalculateSize:YES flags:_flags];
+    }
+    
+}
+
+- (CGFloat)frameRatio {
+    return _frameRatio;
+}
+
+- (void)setBackgroundColor:(UIColor *)backgroundColor {
+    _backgroundColor = backgroundColor;
+    if (_baseMap) {
+        [self fm_updateContentWithNeedRecalculateSize:YES flags:_flags];
+    }
+}
+
+- (UIColor *)backgroundColor {
+    return _backgroundColor;
+}
+
 
 @end

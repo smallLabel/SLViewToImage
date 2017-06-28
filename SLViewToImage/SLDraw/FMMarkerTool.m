@@ -11,13 +11,14 @@
 @implementation FMMarkerTool
 + (UIImage *)fm_drawRectangleWithCornerRadius:(CGFloat)cornerRadius
                                          size:(CGSize)size
-                              backgroundColor:(UIColor *)backgroundColor {
+                              backgroundColor:(UIColor *)backgroundColor
+                                  strokeColor:(UIColor *)strokeColor {
     UIGraphicsBeginImageContextWithOptions(size, NO, 0.0);
-    
-    UIBezierPath *path = [UIBezierPath bezierPathWithRoundedRect:CGRectMake(0, 0, size.width, size.height) cornerRadius:cornerRadius];
+    CGFloat minValue = MIN(size.width, size.height);
+    UIBezierPath *path = [UIBezierPath bezierPathWithRoundedRect:CGRectMake(0, 0, size.width, size.height) cornerRadius:minValue/cornerRadius];
     [backgroundColor setFill];
     [path fill];
-    [[UIColor cyanColor] setStroke];
+    [strokeColor setStroke];
     [path stroke];
     CGContextRef context = UIGraphicsGetCurrentContext();
     CGContextDrawPath(context, kCGPathFillStroke);
@@ -44,7 +45,8 @@
             backgroundColor:(UIColor *)backgroundColor {
     
     UIGraphicsBeginImageContextWithOptions(size, NO, 0.0);
-    UIBezierPath *path = [UIBezierPath bezierPathWithRoundedRect:CGRectMake(0, 0, size.width, size.height) cornerRadius:cornerRadius];
+    CGFloat minValue = MIN(size.width, size.height);
+    UIBezierPath *path = [UIBezierPath bezierPathWithRoundedRect:CGRectMake(0, 0, size.width, size.height) cornerRadius:minValue/cornerRadius];
     [backgroundColor setFill];
     [path fill];
     [path addClip];
@@ -68,17 +70,13 @@
                                      width:(CGFloat)width {
     
     UIGraphicsBeginImageContextWithOptions(size, NO, 0.0);
-    CGContextRef context = UIGraphicsGetCurrentContext();
-    CGContextSetTextDrawingMode (context, kCGTextFillStroke);
-    CGFloat r,g,b,a = 0.0;
-    [fillColor getRed:&r green:&g blue:&b alpha:&a];
-    CGContextSetRGBFillColor (context, r, g, b, a);
-    r = 0.0; g = 0.0; b = 0.0; a = 0.0;
-    [fillColor getRed:&r green:&g blue:&b alpha:&a];
-    CGContextSetRGBStrokeColor (context, r, g, b, a);
-    CGContextSetLineWidth(context, width);
-    
-    [text drawInRect:CGRectMake(0, 0, size.width, size.height) withAttributes:@{NSFontAttributeName:font}];
+//    CGContextRef context = UIGraphicsGetCurrentContext();
+//    CGContextSetTextDrawingMode (context, kCGTextFill);
+//    CGContextSetFillColorWithColor(context, fillColor.CGColor);
+//    CGContextSetStrokeColorWithColor(context, strokeColor.CGColor);
+//    CGContextSetLineWidth(context, width);
+   
+    [text drawInRect:CGRectMake(0, 0, size.width, size.height) withAttributes:@{NSFontAttributeName:font, NSStrokeColorAttributeName:strokeColor, NSForegroundColorAttributeName:fillColor, NSStrokeWidthAttributeName:@(width)}];
     UIImage *image = UIGraphicsGetImageFromCurrentImageContext();
     UIGraphicsEndImageContext();
     

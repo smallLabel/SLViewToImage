@@ -12,6 +12,10 @@
 		E92737351F00BD2E00A2C156 /* test.jpg in Resources */ = {isa = PBXBuildFile; fileRef = E92737341F00BD2E00A2C156 /* test.jpg */; };
 		E92737381F00C04900A2C156 /* FMMarkerTool.m in Sources */ = {isa = PBXBuildFile; fileRef = E92737371F00C04900A2C156 /* FMMarkerTool.m */; };
 		E927373B1F00E26900A2C156 /* FMMarkerComposition+FMMarkerCompositionTool.m in Sources */ = {isa = PBXBuildFile; fileRef = E927373A1F00E26900A2C156 /* FMMarkerComposition+FMMarkerCompositionTool.m */; };
+		E927373E1F00FB0600A2C156 /* night.png in Resources */ = {isa = PBXBuildFile; fileRef = E927373C1F00FB0600A2C156 /* night.png */; };
+		E927373F1F00FB0600A2C156 /* start.png in Resources */ = {isa = PBXBuildFile; fileRef = E927373D1F00FB0600A2C156 /* start.png */; };
+		E92737421F01026D00A2C156 /* UIColor+Hex.m in Sources */ = {isa = PBXBuildFile; fileRef = E92737411F01026D00A2C156 /* UIColor+Hex.m */; };
+		E92737481F02559F00A2C156 /* FMMarkerContent+FMMarkerContentTool.m in Sources */ = {isa = PBXBuildFile; fileRef = E92737471F02559F00A2C156 /* FMMarkerContent+FMMarkerContentTool.m */; };
 		E97600221EFBBF02008A0588 /* CoreText.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E97600211EFBBF02008A0588 /* CoreText.framework */; };
 		E9762F5D1EFBA1C000AB7CE5 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E9762F5C1EFBA1C000AB7CE5 /* CoreGraphics.framework */; };
 		E9762F5F1EFBA1C600AB7CE5 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E9762F5E1EFBA1C600AB7CE5 /* QuartzCore.framework */; };
@@ -43,6 +47,12 @@
 		E92737371F00C04900A2C156 /* FMMarkerTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMMarkerTool.m; sourceTree = "<group>"; };
 		E92737391F00E26900A2C156 /* FMMarkerComposition+FMMarkerCompositionTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "FMMarkerComposition+FMMarkerCompositionTool.h"; sourceTree = "<group>"; };
 		E927373A1F00E26900A2C156 /* FMMarkerComposition+FMMarkerCompositionTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "FMMarkerComposition+FMMarkerCompositionTool.m"; sourceTree = "<group>"; };
+		E927373C1F00FB0600A2C156 /* night.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = night.png; sourceTree = "<group>"; };
+		E927373D1F00FB0600A2C156 /* start.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = start.png; sourceTree = "<group>"; };
+		E92737401F01026D00A2C156 /* UIColor+Hex.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+Hex.h"; sourceTree = "<group>"; };
+		E92737411F01026D00A2C156 /* UIColor+Hex.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+Hex.m"; sourceTree = "<group>"; };
+		E92737461F02559F00A2C156 /* FMMarkerContent+FMMarkerContentTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "FMMarkerContent+FMMarkerContentTool.h"; sourceTree = "<group>"; };
+		E92737471F02559F00A2C156 /* FMMarkerContent+FMMarkerContentTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "FMMarkerContent+FMMarkerContentTool.m"; sourceTree = "<group>"; };
 		E97600211EFBBF02008A0588 /* CoreText.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreText.framework; path = System/Library/Frameworks/CoreText.framework; sourceTree = SDKROOT; };
 		E9762F5C1EFBA1C000AB7CE5 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		E9762F5E1EFBA1C600AB7CE5 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
@@ -125,6 +135,8 @@
 			children = (
 				E9762F6F1EFBA35C00AB7CE5 /* FMMarkerContent.h */,
 				E9762F701EFBA35C00AB7CE5 /* FMMarkerContent.m */,
+				E92737461F02559F00A2C156 /* FMMarkerContent+FMMarkerContentTool.h */,
+				E92737471F02559F00A2C156 /* FMMarkerContent+FMMarkerContentTool.m */,
 				E9762F721EFBA37500AB7CE5 /* FMMarkerText.h */,
 				E9762F731EFBA37500AB7CE5 /* FMMarkerText.m */,
 				E9762F751EFBA39400AB7CE5 /* FMMarkerImage.h */,
@@ -169,6 +181,10 @@
 				E9B0F1561EF3717300CB49BC /* AppDelegate.m */,
 				E9B0F1581EF3717300CB49BC /* ViewController.h */,
 				E9B0F1591EF3717300CB49BC /* ViewController.m */,
+				E92737401F01026D00A2C156 /* UIColor+Hex.h */,
+				E92737411F01026D00A2C156 /* UIColor+Hex.m */,
+				E927373C1F00FB0600A2C156 /* night.png */,
+				E927373D1F00FB0600A2C156 /* start.png */,
 				E92737341F00BD2E00A2C156 /* test.jpg */,
 				E9B0F1721EF3851200CB49BC /* fengmap.png */,
 				E9B0F15B1EF3717300CB49BC /* Main.storyboard */,
@@ -247,11 +263,13 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E927373E1F00FB0600A2C156 /* night.png in Resources */,
 				E9B0F1731EF3851200CB49BC /* fengmap.png in Resources */,
 				E92737351F00BD2E00A2C156 /* test.jpg in Resources */,
 				E9B0F1621EF3717300CB49BC /* LaunchScreen.storyboard in Resources */,
 				E9B0F15F1EF3717300CB49BC /* Assets.xcassets in Resources */,
 				E9B0F15D1EF3717300CB49BC /* Main.storyboard in Resources */,
+				E927373F1F00FB0600A2C156 /* start.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -263,11 +281,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				E9B0F15A1EF3717300CB49BC /* ViewController.m in Sources */,
+				E92737421F01026D00A2C156 /* UIColor+Hex.m in Sources */,
 				E92737081EFCB5EB00A2C156 /* FMMarkerContentFlag.m in Sources */,
 				E9762F7A1EFBA3A900AB7CE5 /* FMMarkerComposition.m in Sources */,
 				E927373B1F00E26900A2C156 /* FMMarkerComposition+FMMarkerCompositionTool.m in Sources */,
 				E9762F6A1EFBA2F800AB7CE5 /* SLCollectionMarker.m in Sources */,
 				E9B0F1711EF37FFD00CB49BC /* UIView+SLViewToImage.m in Sources */,
+				E92737481F02559F00A2C156 /* FMMarkerContent+FMMarkerContentTool.m in Sources */,
 				E9762F741EFBA37500AB7CE5 /* FMMarkerText.m in Sources */,
 				E9B0F1571EF3717300CB49BC /* AppDelegate.m in Sources */,
 				E92737381F00C04900A2C156 /* FMMarkerTool.m in Sources */,
